@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f5be5aaf66.js"></script>
+ <link rel="stylesheet" href="style.css">
+  <title>Shopping List</title>
+</head>
+<body onload="startFetching()">
+  <nav class="navbar navbar-dark bg-primary ">
+    <a class="navbar-brand ml-4" href="#">Freek.<span>com</span></a>
+    <i class="fas fa-cart-arrow-down text-light fa-2x mr-4" id="cart" data-toggle="modal" data-target="#exampleModal"></i>
+    <div class="text-danger bg-warning py-0 px-1 border rounded-circle" id="count">0</div>
+  </nav>
+
+  
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer text-right">
+        <button class="btn btn-primary">Total Price : $ <span id="total">${sum}</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col col-lg-4 col-md-8 col-sm-10  m-auto pt-4">
+        <div class="card border-primary">
+             <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="bed" class="card-img">
+             <i class="far fa-heart text-light fa-2x "></i>
+
+            <div class="card-body py-0">
+              <h7 class="lead text-capitalize mb-5">black table lamp on nightstand</h7>
+              <p class="lead">Price : $ <span>50</span> </p>
+            </div>
+        </div>
+      </div>
+      <div class="col col-lg-4 col-md-8 col-sm-10 pt-4 m-auto"> <div class="card border-primary">
+          
+             <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="bed" class="card-img">
+             <i class="far fa-heart text-light fa-2x "></i>
+            <div class="card-body py-0">
+              <h7 class="lead text-capitalize mb-5">throw pillow on bed frame
+
+                </h7>
+              <p class="lead">Price : $ <span>80</span></p>
+            </div>
+        </div></div>
+      <div class="col col-lg-4 col-sm-10 col-md-8 pt-4 m-auto"> <div class="card border-primary">
+             <img src="https://images.unsplash.com/photo-1538944495092-48fff71fbb0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="bed" class="card-img">
+             <i class="far fa-heart text-light fa-2x "></i>
+            <div class="card-body py-0">
+              <h7 class="lead text-capitalize mb-5">bedroom containing items
+
+                </h7>
+              <p class="lead">Price : $ <span>60</span></p>
+            </div>
+        </div></div>
+      
+    </div>
+
+    <div class="row mt-5">
+        <div class="col col-lg-4 col-sm-10 col-md-8 pt-4 m-auto">
+          <div class="card border-primary">
+               <img src="https://images.unsplash.com/flagged/photo-1556438758-1d61c8c65409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="bed" class="card-img">
+               <i class="far fa-heart text-light fa-2x "></i>
+              <div class="card-body py-0">
+                <h7 class="lead text-capitalize mb-5">empty bed inside room </h7>
+                <p class="lead">Price : $ <span>80</span></p>
+              </div>
+          </div>
+        </div>
+        <div class="col col-lg-4 col-sm-10 col-md-8 pt-4 m-auto"> <div class="card border-primary">
+               <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="bed" class="card-img">
+               <i class="far fa-heart text-light fa-2x "></i>
+              <div class="card-body py-0">
+                <h7 class="lead text-capitalize mb-5">bed near window with lamp</h7>
+                <p class="lead">Price : $ <span>40</span></p>
+              </div>
+          </div></div>
+        <div class="col col-lg-4 col-sm-10 col-md-8 pt-4 m-auto"> <div class="card border-primary">
+               <img src="https://images.unsplash.com/photo-1559599238-308793637427?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="bed" class="card-img">
+               <i class="far fa-heart text-light fa-2x "></i>
+              <div class="card-body py-0">
+                <h7 class="lead text-capitalize mb-5">gray lamp beside white bed
+
+                  </h7>
+                <p class="lead">Price : $ <span>60</span></p>
+              </div>
+          </div></div>
+        
+      </div>
+  </div>
+<footer class="bg-dark p-3 text-light text-center mt-5">2019 &copy;freek.com</footer>
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

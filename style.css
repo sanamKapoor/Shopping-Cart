@@ -1,0 +1,42 @@
+body{
+  font-family: 'Lora', serif;
+}
+.navbar{
+  z-index: 3;
+}
+.navbar-brand{
+  font-size: 1.7rem;
+}
+.navbar-brand span{
+  color: yellow;
+}
+.card i{
+  position: relative;
+  left: 8px;
+  bottom: 35px;
+  width: 20px;
+}
+
+.card i:hover{
+  cursor: pointer;
+}
+
+.card-img:hover{
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3ms;
+  opacity: 0.7;
+  cursor: pointer;
+}
+#count{
+  position: absolute;
+  top: 8px;
+  right: 35px;
+}
+#cart{
+  cursor: pointer;
+}
+footer{
+  font-size: 1.4rem;
+  z-index: 3;
+}
